@@ -196,10 +196,10 @@ if (isset($_GET["add"])) {
                 </select>
                 <small id='usernameError'></small>
             </div>
-            <div id="register_control">
-                <label for="">Upload Image</label>
-                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-            </div>
+            <!-- <div id="register_control">
+                <label for="image">Upload Image</label>
+                <input type="file" class="form-control-file" name="image" id="image">
+            </div> -->
             <small id='success'></small>
             <button type="submit" id='submitBtn' name="submit">Submit</button>
         </form>
