@@ -38,10 +38,6 @@ if (isset($_GET['id']) && $_SESSION['view'] == 'Player') {
 <body>
 
     <div class="container">
-
-        <!-- ADD THIS ATTRIBUTE TO THE FORM TO ALSO VALIDATE WITH JAVASCRIPT BEFORE SUBMITTING TO BACKEND:
-      onsubmit="return validateForm(event);" 
--->
         <form id="form" class="form" action="./validate_update.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event);">
             <h1 id="register_title"><?php echo "Update " .  $member["first_name"] . "\n" . $member['last_name'] ?></h1>
             <?php
@@ -206,18 +202,7 @@ if (isset($_GET['id']) && $_SESSION['view'] == 'Player') {
                 </select>
                 <small id='usernameError'></small>
             </div>
-            <!-- <div id="register_control">
-                <label for="isArchive">Archive</label>
-                <select name="isArchive" id="isArchive">
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                </select>
-                <small id='usernameError'></small>
-            </div> -->
-            <!-- <div id="register_control">
-                <label for="">Choose New Image</label>
-                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-            </div> -->
+          
             <small id='success'></small>
             <button type="submit" id='submitBtn' name="submit">Update</button>
         </form>

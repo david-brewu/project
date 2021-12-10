@@ -79,11 +79,6 @@ session_start();
                         <small id='ConfirmpasswordError'></small>
                     </div><br>
                    
-                    <!-- <div>
-                        <label id= "label" for="image"><b>Choose an Image</b></label>
-                        <input type="file" id="form-control-file"  name="image">
-                    </div> -->
-                   
                     <small id='success'></small>
                     <button class="normal" type="submit" name="submit">Sign Up</button>
                     

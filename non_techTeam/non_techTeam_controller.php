@@ -2,9 +2,9 @@
 //connect to post class
 include_once (dirname(__FILE__)).'/non_techTeam_class.php';
 
-// Inserting a new post
+// Inserting a new non technical member
 function createNTM($member_ID, $isPartTime, $department, $yearsOfService){
-    // Create new post object
+    // Create new non technical member object
     $ntm = new NonTechnicalMember;
 
     // Run query
@@ -19,7 +19,7 @@ function createNTM($member_ID, $isPartTime, $department, $yearsOfService){
 
 
 function getNTMs(){
-    // Create new post object
+    // Create new non technical member object
     $ntm = new NonTechnicalMember;
 
     // Run query
@@ -46,7 +46,7 @@ function getNTMs(){
 
 
 function getSingleNTM($ntm_ID){
-    // Create new post object
+    // Create new non technical member object
     $ntm = new NonTechnicalMember;
 
     // Run query
@@ -68,7 +68,7 @@ function getSingleNTM($ntm_ID){
 
 
 function updateNTM($ntm_ID, $first_name,	$last_name,	$dob, $country, $contract_status, $date_signed, $contract_exp_date,$salary, $isPartTime, $department, $yearsOfService){
-    // Create new post object
+    // Create new non technical member object
     $ntm = new NonTechnicalMember;
 
     // Run query
@@ -81,17 +81,4 @@ function updateNTM($ntm_ID, $first_name,	$last_name,	$dob, $country, $contract_s
     }
 }
 
-function deleteNTM($ntm_ID){
-    // Create new post object
-    $ntm = new NonTechnicalMember;
-
-    // Run query
-    $runQuery = $ntm->delete($ntm_ID);
-
-    if($runQuery){
-        return $runQuery;
-    }else{
-        return false;
-    }
-}
 ?>

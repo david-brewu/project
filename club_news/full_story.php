@@ -2,6 +2,7 @@
 include_once("./news_controller.php");
 
 session_start();
+// get id from GET to fetch and display display news
 if (isset($_GET['news_id'])) {
    $news_id = $_GET['news_id'];
     $news = getSingleNews($news_id);

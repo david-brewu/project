@@ -30,10 +30,6 @@ if (isset($_GET['id']) && $_SESSION['view'] == 'Player') {
 }
 
 
-
-//$_SESSION["edit"] = "Player";
-//$_SESSION["view"] = "view";
-
 ?>
 
 

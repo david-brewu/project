@@ -133,7 +133,7 @@ span.psw {
     color: white;
 }
 
-/* Create two equal columns that floats next to each other */
+
 .column {
     float: left;
     width: 48.5%;
@@ -147,8 +147,7 @@ span.psw {
    
   }
   
-  
-  /* Clear floats after the columns */
+
   .row:after {
     content: "";
     display: table;

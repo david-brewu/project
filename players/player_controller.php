@@ -1,11 +1,11 @@
 <?php
-//connect to post class
+//connect to player class
 include_once (dirname(__FILE__)) . '/player_class.php';
 
-// Inserting a new post
+// Inserting a new player
 function createPlayer($previous_team,    $position, $fromAcademy, $isCaptain, $isLoan, $member_ID)
 {
-    // Create new post object
+    // Create new player object
     $player = new Player;
 
     // Run query
@@ -18,28 +18,10 @@ function createPlayer($previous_team,    $position, $fromAcademy, $isCaptain, $i
     }
 }
 
-// function verify_email($email){
-//     $supporter =new Supporter;
-
-//     $runQuery = $supporter->verify_email($email);
-
-//     if($runQuery){
-//         // fetch data from database
-//         $user_email = $supporter->db_fetch();
-//         if(empty($user_email)){
-//             // if empty means the email isn't in the database already
-//             return true;
-//         }else{
-//             return false;
-//         }
-//     }else{
-//         return false;
-//     }
-// }
 
 function getPlayers()
 {
-    // Create new post object
+    // Create new player object
     $player = new Player;
 
     // Run query
@@ -68,7 +50,7 @@ function getPlayers()
 
 function getSinglePlayer($player_ID)
 {
-    // Create new post object
+    // Create new player object
     $player = new Player;
 
     // Run query
@@ -87,30 +69,10 @@ function getSinglePlayer($player_ID)
     }
 }
 
-// function getSingleSupporterWithEmail($email){
-//     // Create new post object
-//     $supporter = new Supporter;
-
-//     // Run query
-//     $runQuery = $supporter->getSingleSupporterWithEmail($email);
-
-//     if($runQuery){
-
-//         $single_supporter = $supporter->db_fetch();
-//         if(!empty($single_supporter)){
-//             return $single_supporter;
-//         }else{
-//             return [];
-//         }
-
-//     }else{
-//         return false;
-//     }
-// }
 
 function updatePlayer($player_ID, $first_name,    $last_name,    $dob, $country, $contract_status, $date_signed, $contract_exp_date, $salary, $previous_team,    $position, $fromAcademy, $isCaptain, $isLoan)
 {
-    // Create new post object
+    // Create new player object
     $player = new Player;
 
     // Run query
@@ -126,7 +88,7 @@ function updatePlayer($player_ID, $first_name,    $last_name,    $dob, $country,
 
 function deletePlayer($member_ID)
 {
-    // Create new post object
+    // Create new player object
     $player = new Player;
 
     // Run query

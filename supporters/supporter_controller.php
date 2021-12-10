@@ -1,10 +1,10 @@
 <?php
-//connect to post class
+//connect to supporter class
 include_once (dirname(__FILE__)).'/supporter_class.php';
 
-// Inserting a new post
+// Inserting a new supporter
 function createSupporter($first_name, $last_name, $email, $password, $isAdmin, $isArchive, $default_avatar){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query
@@ -37,7 +37,7 @@ function verify_email($email){
 }
 
 function getSupporters(){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query
@@ -70,7 +70,7 @@ function archive_supporter($id, $archive){
 
 
 function getSingleSupporter($id){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query
@@ -91,7 +91,7 @@ function getSingleSupporter($id){
 }
 
 function getSingleSupporterWithEmail($email){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query
@@ -112,7 +112,7 @@ function getSingleSupporterWithEmail($email){
 }
 
 function updateSupporter($id, $first_name, $last_name, $email){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query
@@ -126,7 +126,7 @@ function updateSupporter($id, $first_name, $last_name, $email){
 }
 
 function deleteSupporter($id){
-    // Create new post object
+    // Create new supporter object
     $supporter = new Supporter;
 
     // Run query

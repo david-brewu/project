@@ -21,14 +21,13 @@ if (isset($_GET['logout'])) {
 ?>
 
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+
     <link rel="stylesheet" href="./../css/adminPageCss.css">
-    <!-- Boxicons CDN Link -->
+    <!-- fonts from CodingLab -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -148,7 +147,6 @@ if (isset($_GET['logout'])) {
             $search = strtolower($_SESSION['search']);
             if (strpos($firstName, $search) !== false || strpos($lastName, $search) !== false) {
                 $count = $count + 1;
-                // echo '<h2 style="color:white; text-align:center; margin-top:5%">Search results for '. $_SESSION['search'] . '</h2>';
                 if ($_SESSION['view'] == 'Player') {
                     $id = $player['player_ID'];
                 } elseif ($_SESSION['view'] == 'Technical Member') {
@@ -241,9 +239,6 @@ if (isset($_GET['logout'])) {
 
 
             }
-            //else 
-            //
-
         }
         if ($count == 0) {
             echo '<h2 style="color:white; text-align:center; margin-top:15%">No result matches your search</h2>';
@@ -268,10 +263,6 @@ if (isset($_GET['logout'])) {
                 $id = $player['ntt_ID'];
             }
 
-
-
-            //$_SESSION['player_ID'] = $player['player_ID'];
-            //$player_ID = $_SESSION['player_ID'];
 
             ?>
 

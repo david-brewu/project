@@ -3,15 +3,14 @@ include_once("./../member/member_controller.php");
 
 session_start();
 if (isset($_GET['id'])) {
+    // get id from GET to fetch and display information about the archive
     $_SESSION['id'] = $_GET['id'];
     $member = getSingleMember($_SESSION['id']);
     $id = $member["member_ID"];
     $delete_id = $member["member_ID"];
-
 } 
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -136,9 +135,6 @@ if (isset($_GET['id'])) {
             <li id="cardName">
                 <a id="more" href="<?php echo './../players/update_archive.php?job=unarchive&archive_ID=' . $id; ?>">Unarchive</a>
             </li>
-            <!-- <li id="delete_archive">
-                <a id="more2" href=">"> Delete</a>
-            </li> -->
         </ul><br>
     </div>
 </body>

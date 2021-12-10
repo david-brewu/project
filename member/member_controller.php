@@ -1,10 +1,10 @@
 <?php
-//connect to post class
+//connect to member class
 include_once (dirname(__FILE__)).'/../member/member_class.php';
 
-// Inserting a new post
+// Inserting a new member
 function createMember($first_name, $last_name, $dob, $country, $contract_status, $date_signed, $contract_exp_date,$salary,$isArchive,$image){
-    // Create new post object
+    // Create new member object
     $member = new Member;
 
     // Run query
@@ -24,22 +24,17 @@ function archive($member_ID, $archive){
     $runQuery = $member->archive($member_ID, $archive);
 
     if($runQuery){
-        return $runQuery;
+        return true;
     }else{
         return false;
     }
 }
 
 
-// function getID(){
-//     $member = new Member;
-//     $id = $member->getID();
-//     return $id;
-    
-// }
+
 
 function getMembers(){
-    // Create new post object
+    // Create new member object
     $member = new Member;
 
     // Run query
@@ -57,7 +52,7 @@ function getMembers(){
 }
 
 function getArchivedMembers(){
-    // Create new post object
+    // Create new member object
     $member = new Member;
 
     // Run query
@@ -80,7 +75,7 @@ function getArchivedMembers(){
 }}
 
 function getSingleMember($member_ID){
-    // Create new post object
+    // Create new member object
     $member = new Member;
 
     // Run query
@@ -101,7 +96,7 @@ function getSingleMember($member_ID){
 }
 
 function updateMember($member_ID, $first_name,	$last_name,	$dob, $country, $contract_status, $date_signed, $contract_exp_date,$salary){
-    // Create new post object
+    // Create new member object
     $member = new Member;
 
     // Run query
@@ -114,19 +109,6 @@ function updateMember($member_ID, $first_name,	$last_name,	$dob, $country, $cont
     }
 }
 
-function deletePost($member_ID){
-    // Create new post object
-    $member = new Member;
-
-    // Run query
-    $runQuery = $member->delete($member_ID);
-
-    if($runQuery){
-        return $runQuery;
-    }else{
-        return false;
-    }
-}
 
 function totalMemberArcheives(){
     $members = getMembers();

@@ -9,10 +9,6 @@ const confirm_password = $('#confirm_passwordd');
 
 
 
-// username.keyup(function(e){
-//     console.log(username.val())
-// });
-
 // error count
 let errors = 0;
 
@@ -56,14 +52,9 @@ const checkPasswordMatch = (password1, password2) => {
     }
 }
 
-// When form is submitted
-// form.submit(function(e){
-    
-//     // Submit the form
-// })
 
 const validateForm = (e) =>{
-    //e.preventDefault();
+    
     $('small').html('');
     errors = 0;
 

@@ -26,5 +26,3 @@ include_once("./supporter_controller.php");
         }
         }
     }
-    
-    ?>

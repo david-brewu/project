@@ -17,9 +17,6 @@ const body = $('#body');
 
 
 
-// username.keyup(function(e){
-//     console.log(username.val())
-// });
 
 // error count
 let errors = 0;
@@ -59,14 +56,9 @@ const checkEmail = (input) => {
 }
 
 
-// When form is submitted
-// form.submit(function(e){
-    
-//     // Submit the form
-// })
 
 const validateForm = (e) =>{
-    //e.preventDefault();
+    
     $('small').html('');
     errors = 0;
 
@@ -76,7 +68,7 @@ const validateForm = (e) =>{
     checkInputLength(salary, 2, 8);
     checkInputLength(title, 5, 100);
     checkInputLength(body, 5, 20000);
-    //checkEmail(email);
+    
     
     if(errors === 0){
         return true;

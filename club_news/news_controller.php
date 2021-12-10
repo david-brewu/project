@@ -1,10 +1,10 @@
 <?php
-//connect to post class
+//connect to News class
 include_once (dirname(__FILE__)).'/news_class.php';
 
-// Inserting a new post
+// Inserting a new news
 function createNews($date,	$title,	$image, $body, $isArchive){
-    // Create new post object
+    // Create new news object
     $news = new News;
 
     // Run query
@@ -34,7 +34,7 @@ function archive($news_ID, $archive){
 
 
 function getNews(){
-    // Create new post object
+    // Create new nws object
     $news = new News;
 
     // Run query
@@ -51,31 +51,9 @@ function getNews(){
     }
 }
 
-// function getArchivedMembers(){
-//     // Create new post object
-//     $member = new Member;
-
-//     // Run query
-//     $runQuery = $member->getMembers();
-
-//     if($runQuery){
-//         $members = array();
-//         $archive_member = array();
-//         while($record = $member->db_fetch()){
-//             $members[] = $record;
-//         }
-//         foreach($members as $member){
-//             if($member['isArchive'] == 'Yes'){
-//                 $archive_member[] = $member;
-//             }
-//         }
-//         return $archive_member;
-//     }else{
-//         return [];
-// }}
 
 function getSingleNews($news_ID){
-    // Create new post object
+    // Create new news object
     $news = new News;
 
     // Run query
@@ -96,7 +74,7 @@ function getSingleNews($news_ID){
 }
 
 function updateNews($news_ID, $date, $title, $image, $body, $isArchive){
-    // Create new post object
+    // Create new news object
     $news = new News;
 
     // Run query
@@ -110,7 +88,7 @@ function updateNews($news_ID, $date, $title, $image, $body, $isArchive){
 }
 
 function deleteNews($news_ID){
-    // Create new post object
+    // Create new News object
     $news = new News;
 
     // Run query
@@ -123,17 +101,4 @@ function deleteNews($news_ID){
     }
 }
 
-// function totalMemberArcheives(){
-//     $members = getMembers();
-//     $total_archieves = 0;
-//     if($members != false){
-//         foreach ($members as $member){
-//             if($member["isArchive"] == "Yes"){
-//                 $total_archieves ++;
-//             }
-//         }
-//     }
-//     return $total_archieves;
-    
-//}
 ?>

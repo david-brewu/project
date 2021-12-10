@@ -65,15 +65,12 @@ if(isset($_POST["submit"])){
 
 
     if (count($errors) == 0) {
-        // upload image
-      //  $upload_Image = move_uploaded_file($_FILES["image"]["tmp_name"], '../'.$target_file);
-        // check if uploaded successfully and then add new user
-       // if ($upload_image) {
-            //encrpt password
+       
             $password = md5($password);
+            // register supporter
             $newSupporter = createSupporter($first_name, $last_name,$email, $password, $isAdmin, $isArchive, $default_avatar);
 
-            //eheck if user is registered
+            //eheck if supporter is registered
             if ($newSupporter) {
                 header("location: ./../pages/loginPage.php");
             } else {echo "failed";}

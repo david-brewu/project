@@ -1,10 +1,10 @@
 <?php
-//connect to post class
+//connect to technical member class
 include_once (dirname(__FILE__)).'/techTeam_class.php';
 
-// Inserting a new post
+// Inserting a technical member post
 function createTM($isOldplayer, $role, $isPartTime, $member_ID, $yearsOfService){
-    // Create new post object
+    // Create new technical member object
     $tm = new TechnicalMember;
 
     // Run query
@@ -19,7 +19,7 @@ function createTM($isOldplayer, $role, $isPartTime, $member_ID, $yearsOfService)
 
 
 function getTMs(){
-    // Create new post object
+    // Create new technical member object
     $tm = new TechnicalMember;
 
     // Run query
@@ -47,7 +47,7 @@ function getTMs(){
 
 
 function getSingleTM($tm_ID){
-    // Create new post object
+    // Create new technical member object
     $tm = new TechnicalMember;
 
     // Run query
@@ -69,7 +69,7 @@ function getSingleTM($tm_ID){
 
 
 function updateTM($tm_ID, $first_name,	$last_name,	$dob, $country, $contract_status, $date_signed, $contract_exp_date,$salary, $isOldplayer, $role, $isPartTime, $yearsOfService){
-    // Create new post object
+    // Create new technical member object
     $tm = new TechnicalMember;
 
     // Run query
@@ -83,7 +83,7 @@ function updateTM($tm_ID, $first_name,	$last_name,	$dob, $country, $contract_sta
 }
 
 function deleteTM($tm_ID){
-    // Create new post object
+    // Create new technical member object
     $tm = new TechnicalMember;
 
     // Run query

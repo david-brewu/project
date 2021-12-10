@@ -32,7 +32,6 @@
 
             // run query
             return $this->db_query($sql);
-
         }
 
         public function delete($player_ID){
@@ -44,6 +43,3 @@
             return $this->db_query($sql);
         }
     }
-
-
-    ?>

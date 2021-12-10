@@ -1,9 +1,9 @@
 <?php
+// start session
 session_start();
 if (isset($_GET["add"])) {
     $_SESSION["add"] = $_GET["add"];
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +20,7 @@ if (isset($_GET["add"])) {
 <body>
 
     <div class="container">
-
-        <!-- ADD THIS ATTRIBUTE TO THE FORM TO ALSO VALIDATE WITH JAVASCRIPT BEFORE SUBMITTING TO BACKEND:
-      onsubmit="return validateForm(event);" 
--->
+        <!-- form -->
         <form id="form" class="form" action="./validate_add.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event);">
             <h1 id="register_title"><?php echo "Register a " .  $_SESSION["add"] ?></h1>
             <?php
@@ -39,58 +36,61 @@ if (isset($_GET["add"])) {
             // destroy session after displaying errors
             $_SESSION["errors"] = null;
             ?>
+            <!-- remainder of form -->
             <div id="register_control">
                 <label for="first_name">First Name</label>
-                <input type="text" placeholder="Enter first name" id="first_name" name="first_name" >
+                <input type="text" placeholder="Enter first name" id="first_name" name="first_name">
                 <small id='usernameError'></small>
             </div>
             <div id="register_control">
                 <label for="last_name">Last Name</label>
-                <input type="text" placeholder="Enter last name" id="last_name" name="last_name" >
+                <input type="text" placeholder="Enter last name" id="last_name" name="last_name">
                 <small id='emailError'></small>
             </div>
             <div id="register_control">
                 <label for="dob">Date of Birth</label>
-                <input type="date" placeholder="yyyy/mm/dd" id="dob" name="dob" >
+                <input type="date" placeholder="yyyy/mm/dd" id="dob" name="dob">
                 <small id='passwordError'></small>
             </div>
             <div id="register_control">
                 <label for="country">Nationality</label>
-                <input type="text" placeholder="Enter your country" id="country" name="country" >
+                <input type="text" placeholder="Enter your country" id="country" name="country">
                 <small id='password2Error'></small>
             </div>
 
 
             <div id="register_control">
                 <label for="date_signed">Date Signed</label>
-                <input type="date" placeholder="yyyy-mm-dd" id="date_signed" name="date_signed" >
+                <input type="date" placeholder="yyyy-mm-dd" id="date_signed" name="date_signed">
                 <small id='emailError'></small>
             </div>
 
             <div id="register_control">
                 <label for="contract_exp_date">Contract Expiring Date</label>
-                <input type="date" placeholder="yyyy-mm-dd" id="contract_exp_date" name="contract_exp_date" >
+                <input type="date" placeholder="yyyy-mm-dd" id="contract_exp_date" name="contract_exp_date">
                 <small id='emailError'></small>
             </div>
 
             <div id="register_control">
                 <label for="salary">Salary in USD</label>
-                <input type="text" placeholder="Enter salary" id="salary" name="salary" >
+                <input type="text" placeholder="Enter salary" id="salary" name="salary">
                 <small id='password2Error'></small>
             </div>
 
             <?php
 
+            // if you are adding a player
+
             if ($_SESSION['add'] == "Player") {
             ?>
                 <div id="register_control">
                     <label for="previous_team">Previous Team</label>
-                    <input type="text" placeholder="Enter previous team" id="previous_team" name="previous_team" >
+                    <input type="text" placeholder="Enter previous team" id="previous_team" name="previous_team">
                     <small id='usernameError'></small>
                 </div>
                 <div id="register_control">
                     <label for="position">Position</label>
-                    <input type="text" placeholder="Enter player postion" id="position" name="position" >
+                    <input type="text" placeholder="Enter player postion" id="position" name="position">
                     <small id='emailError'></small>
                 </div>
                 <div id="register_control">
@@ -118,16 +118,20 @@ if (isset($_GET["add"])) {
                     <small id='usernameError'></small>
                 </div>
             <?php
-            }elseif($_SESSION["add"] == "Technical Member"){
-                ?>
+
+
+            }
+            // if you are adding a Technical Member
+            elseif ($_SESSION["add"] == "Technical Member") {
+            ?>
                 <div id="register_control">
                     <label for="role">Role</label>
-                    <input type="text" placeholder="Enter role" id="role" name="role" >
+                    <input type="text" placeholder="Enter role" id="role" name="role">
                     <small id='usernameError'></small>
                 </div>
                 <div id="register_control">
                     <label for="yearsOfService">Years of Service</label>
-                    <input type="text" placeholder="Enter years of service" id="yearsOfService" name="yearsOfService" >
+                    <input type="text" placeholder="Enter years of service" id="yearsOfService" name="yearsOfService">
                     <small id='emailError'></small>
                 </div>
                 <div id="register_control">
@@ -146,12 +150,15 @@ if (isset($_GET["add"])) {
                     </select>
                     <small id='usernameError'></small>
                 </div>
-        <?php
-            }elseif($_SESSION['add'] == "Non-Technical Member"){
+            <?php
+            }
+            // if you are adding a non-technical member
+
+            elseif ($_SESSION['add'] == "Non-Technical Member") {
             ?>
                 <div id="register_control">
                     <label for="yearsOfService">Years of Service</label>
-                    <input type="text" placeholder="Enter years of service" id="yearsOfService" name="yearsOfService" >
+                    <input type="text" placeholder="Enter years of service" id="yearsOfService" name="yearsOfService">
                     <small id='emailError'></small>
                 </div>
                 <div id="register_control">
@@ -170,7 +177,7 @@ if (isset($_GET["add"])) {
                     </select>
                     <small id='usernameError'></small>
                 </div>
-        <?php
+            <?php
             }
             ?>
             <div id="register_control">
@@ -200,6 +207,7 @@ if (isset($_GET["add"])) {
         </form>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./../js/add_js.js"></script>
+        <script src="./../js/add_js.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 <?php
-//connect to post controller
+//connect to member controller
 include_once ("member_controller.php");
 //include_once (dirname(__FILE__)).'/member_controller.php';
 
@@ -17,7 +17,7 @@ if(isset($_GET['submit'])){
     $isArchive = $_GET['isArchive'];
     $image = $_GET['image'];
 
-    // create post if not empty
+    // create member if not empty
     $newMember = createMember($first_name, $last_name, $dob, $country, $contract_status, $date_signed, $contract_exp_date,$salary, $isArchive, $image);
     if($newMember){
         echo "success";
@@ -25,7 +25,3 @@ if(isset($_GET['submit'])){
     }
     else echo "failed";
 }else echo "submit not set";
-
-
-//http://localhost/webtech/functions/post_create.php?title=Hey&body=Hi+there&submit=
-//http://localhost/project/member/create_member.php?first_name=David&last_name=Brewu&dob=1998-05-05&country=Ghana&contract_status=Active&date_signed=1998-05-05&contract_exp_date=1998-05-05&salary=2000&submit=

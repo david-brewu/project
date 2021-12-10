@@ -3,51 +3,6 @@
     color:white;
     font-weight:bold;
   }
-/*
-  #register_body_body{
-    background-color: #f9fafb;
-    font-family: 'Open Sans', 'sans-serif';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  #register{
-    padding: 30px 40px;
-  }
-  
-  #register_control{
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
-  }
-  
-  
-  #register_control input{
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  #register_control label{
-    color: #777;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  #register_control input:focus{
-    outline: 0;
-    border-color: #777;
-  } */
-
-
-
-  
 
 :root {
     --success-color: #2ecc71;

@@ -15,12 +15,6 @@
             return $this->db_query($sql);
         }
 
-        // public function getID(){
-        //     $sql = "SELECT LAST_INSERT_ID()";
-        //     return $this->db_query($sql);
-        // }
-        
-
         public function getMembers(){
             //sql query
             $sql = "SELECT * FROM `members`";
@@ -55,6 +49,4 @@
 
         
     }
-
-
     ?>
