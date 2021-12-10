@@ -32,7 +32,7 @@ if (strlen($body) > 20000) {
 }
 
 // image validation
-$target_dir = "./images/";
+$target_dir = "./../images/";
 // file path
 $target_file = $target_dir . basename($_FILES['image']['name']);
 // image file type

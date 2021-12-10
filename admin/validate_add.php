@@ -5,8 +5,6 @@ include_once("./../techTeam/techTeam_controller.php");
 include_once("./../non_techTeam/non_techTeam_controller.php");
 require_once("./../db_essentials/db_credentials.php");
 
-$image = "./../images/default_avatar.png";
-
 session_start();
 $errors = array();
 $db = mysqli_connect(servername, username, password, dbname);
@@ -24,7 +22,7 @@ if (isset($_POST["submit"])) {
     $salary = $_POST["salary"];
     $contract_status = $_POST["contract_status"];
     $isArchive = $_POST["isArchive"];
-    //$image = $_POST['image'];
+    
 
     if ($_SESSION['add'] == "Player") {
         $previous_team = $_POST["previous_team"];
@@ -80,41 +78,40 @@ if (isset($_POST["submit"])) {
 
 
     // image validation
-    // $target_dir = "./../images/";
-    // // file path
-    // $target_file = $target_dir . basename($_FILES['image']['name']);
-    // // image file type
-    // $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    // $image_file = "./../images/" + $image;
+    $target_dir = "./../images/";
+    // file path
+    $target_file = $target_dir . basename($_FILES['image']['name']);
+    // image file type
+    $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 
-    // if (empty($_FILES["image"]["name"])) {
-    //     array_push($errors, "file cannot be empty");
-    // } else {
-    //     // check if its an actual image
-    //     $check = getimagesize($_FILES["image"]["tmp_name"]);
-    //     if ($check == false) {
-    //         array_push($errors, "file is not an image");
-    //     }
+    if (empty($_FILES["image"]["name"])) {
+        array_push($errors, "file cannot be empty");
+    } else {
+        // check if its an actual image
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($check == false) {
+            array_push($errors, "file is not an image");
+        }
 
-    //     // limit file size to 5MB
-    //     if ($_FILES["image"]["size"] > 5000000) {
-    //         array_push($errors, "upload an image less than 5MB");
-    //     }
+        // limit file size to 5MB
+        if ($_FILES["image"]["size"] > 5000000) {
+            array_push($errors, "upload an image less than 5MB");
+        }
 
-    //     // limit file type
-    //     if ($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg") {
-    //         array_push($errors, "Sorry, only JPG, PNG & GIF files are allowed");
-    //     }
-    // }
+        // limit file type
+        if ($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg") {
+            array_push($errors, "Sorry, only JPG, PNG & GIF files are allowed");
+        }
+    }
     // Add if errors == 0
     if (count($errors) == 0) {
-      //  $upload_image = move_uploaded_file($_FILES["image"]["tmp_name"], './' . $target_file);
+        $upload_image = move_uploaded_file($_FILES["image"]["tmp_name"], './' . $target_file);
 
-       // if ($upload_image) {
+        if ($upload_image) {
 
 
-            $newMember = createMember($first_name, $last_name, $dob, $country, $contract_status, $date_signed, $contract_exp_date, $salary, $isArchive, $image);
+            $newMember = createMember($first_name, $last_name, $dob, $country, $contract_status, $date_signed, $contract_exp_date, $salary, $isArchive, $target_file);
 
 
             if ($newMember) {
@@ -144,7 +141,7 @@ if (isset($_POST["submit"])) {
                     echo $_SESSION['add'];
                 }
             } else echo "Failed to create a new member";
-       // } else echo "upload failed";
+        } else echo "upload failed";
     } else {
         session_start();
 

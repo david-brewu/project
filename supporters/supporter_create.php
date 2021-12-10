@@ -68,7 +68,7 @@ if(isset($_POST["submit"])){
        
             $password = md5($password);
             // register supporter
-            $newSupporter = createSupporter($first_name, $last_name,$email, $password, $isAdmin, $isArchive, $default_avatar);
+            $newSupporter = createSupporter($first_name, $last_name,$email, $password, "Yes", "NO", $default_avatar);
 
             //eheck if supporter is registered
             if ($newSupporter) {
